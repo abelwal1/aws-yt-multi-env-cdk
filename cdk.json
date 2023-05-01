@@ -46,6 +46,26 @@
     "@aws-cdk/aws-ec2:launchTemplateDefaultUserData": true,
     "@aws-cdk/aws-secretsmanager:useAttachedSecretResourcePolicyForSecretTargetAttachments": true,
     "@aws-cdk/aws-redshift:columnId": true,
-    "@aws-cdk/aws-stepfunctions-tasks:enableEmrServicePolicyV2": true
+    "@aws-cdk/aws-stepfunctions-tasks:enableEmrServicePolicyV2": true,
+    "globals": {
+      "appName": "yt-multi-env-cdk",
+      "region": "ap-south-1"
+    },
+    "environments": [
+      {
+        "environment": "develop",
+        "branchName": "develop",
+        "accountNumber": "103863185701",
+        "s3Encrypt": false,
+        "ddbPITRecovery": false
+      },
+      {
+        "environment": "production",
+        "branchName": "main",
+        "accountNumber": "103863185701",
+        "s3Encrypt": true,
+        "ddbPITRecovery": true
+      }
+    ]
   }
 }
